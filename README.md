@@ -2,7 +2,7 @@
 ##
 
 
-# Implementation 1 :
+# Implementation 1 : O(n) Space
 ```java
 class Solution {
     public int rob(int[] nums) {
@@ -22,3 +22,30 @@ class Solution {
     }
 }
 ```
+# Implementation 2 : O(1) Space
+```java
+class Solution {
+    public int rob(int[] nums) {
+        if(nums == null || nums.length == 0)
+            return 0;
+        if(nums.length == 1)
+            return nums[0];
+        if(nums.length == 2)
+            return Math.max(nums[0], nums[1]);
+        
+        int maxBeforeTwoHouse = nums[0];
+        int maxBeforeOneHouse = Math.max(nums[0], nums[1]);
+        int maxAtI = Math.max(nums[0], nums[1]);
+        
+        for(int i = 2; i < nums.length; i++) {
+            maxAtI = Math.max(maxBeforeTwoHouse+ nums[i] , maxBeforeOneHouse);
+            maxBeforeTwoHouse = maxBeforeOneHouse;
+            maxBeforeOneHouse = maxAtI;
+        }
+        return maxAtI;
+    }
+}
+```
+
+# References :
+https://www.youtube.com/watch?v=xlvhyfcoQa4

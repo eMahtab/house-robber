@@ -25,6 +25,20 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 1. 0 <= nums.length <= 100
 2. 0 <= nums[i] <= 400
 
+### Approach :
+Since we can't rob two adjacent houses, we have either of 3 choices.
+1. Rob odd houses e.g.  1, 3, 5, 7, ... , odd house
+2. Rob even houses  e.g. 2, 4, 6, 8, ... , even house
+3. Rob houses in any random order(but don't rob two adjacent houses) e.g. (1, 4, 7, ..., 10) or (2, 5, 8, 11, 14)
+
+Its clear that we don't know which sequence will give us the most amount of money. 
+We could try all possible sequences and find out the max amount of money we can rob.
+But that will be a naive solution and running time will not be very good.
+
+#### Dynamic Programming to the rescue.
+At each house we have two choices : 
+1. Rob the ith house (money from ith house and total money collected till house i-2)
+2. Don't rob the ith house (total money collected till house i-1)
 
 # Implementation 1 : O(n) Space
 ```java

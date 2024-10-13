@@ -35,7 +35,7 @@ Its clear that we don't know which sequence will give us the most amount of mone
 We could try all possible sequences and find out the max amount of money we can rob.
 But that will be a naive solution and running time will not be very good.
 
-#### Dynamic Programming to the rescue.
+#### Dynamic Programming to the rescue (This solution will also work if input array contains negative numbers)
 At each house we have two choices : 
 1. Rob the ith house (money from ith house and total money collected till house i-2)
 2. Don't rob the ith house (total money collected till house i-1)
@@ -84,6 +84,7 @@ class Solution {
     }
 }
 ```
+
 
 # References :
 https://www.youtube.com/watch?v=xlvhyfcoQa4

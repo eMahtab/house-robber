@@ -25,6 +25,10 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 1. 0 <= nums.length <= 100
 2. 0 <= nums[i] <= 400
 
+## Note :
+One solution that might come to our mind is, just the rob the odd number houses, or just rob the even number houses and take the maximum out of these two scenarios.
+But this approach does not guaranatee max possible rob e.g. [2,1,1,2] the max rob is 4 which is by robbing house 1 an 4.
+
 ### Approach :
 Since we can't rob two adjacent houses, we have either of 3 choices.
 1. Rob odd houses e.g.  1, 3, 5, 7, ... , odd house
